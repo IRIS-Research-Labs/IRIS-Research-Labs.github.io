@@ -1,235 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>IRIS Research Labs</title>
-  <style>
-    body {
-      background-color: #666;
-      color: #0f0;
-      margin: 0;
-      padding: 0;
-    }
-    .menu {
-      background-color: #222;
-      color: #0f0;
-      padding: 20px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 200px;
-      box-sizing: border-box;
-    }
-    .logo {
-      height: 107px;
-      width: 171px;
-      margin: 20px 10px 20px 0;
-      text-align: center;
-    }
-    .menu ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .menu li {
-      margin: 10px 0;
-    }
-    .menu a {
-      color: #0f0;
-      text-decoration: none;
-      padding: 10px;
-      display: block;
-    }
-    .content {
-      margin-top: 120px;
-      margin-left: 200px;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-    }
-    h2 {
-      text-align: center;
-    }
-    p {
-      text-align: center;
-      margin: 20px;
-    }
-    .footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #222;
-      color: #fff;
-      padding: 20px;
-      box-sizing: border-box;
-      text-align: center;
-    }
-    .message-box {
-      border: 2px solid #0f0;
-      margin: 20px auto;
-      padding: 20px;
-      max-width: 600px;
-      text-align: center;
-    }
-    /* New CSS for the center container */
-    .center-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap; /* Allow the gifs to wrap to the next line if needed */
-    }
-    .center-container img {
-      width: 88px;
-      height: 31px;
-      margin: 10px; /* Add a small margin between the gifs */
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.json FTC Team</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
 
-    /* New CSS for the button */
-    .email-button {
-      text-align: center;
-      margin-top: 10px;
-    }
-    .email-button a {
-      display: block;
-      width: 133px;
-      height: 40px;
-    }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    /* New CSS for the modal */
-    .modal {
-      display: none; /* Hidden by default */
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-    }
-    .modal-content {
-      background-color: #222;
-      margin: 15% auto;
-      padding: 20px;
-      max-width: 400px;
-      color: #fff;
-      border: 2px solid #0f0;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-    .close {
-      color: #0f0;
-      float: right;
-      font-size: 20px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-  </style>
+        .logo {
+            max-width: 100px; /* Adjust the max-width as needed */
+            height: auto;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 1.5em;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #2077b0;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="menu">
-    <a href="index.html">
-      <div class="logo">
-        <img src="gif/computer.gif" alt="IRIS Research Labs">
-      </div>
-    </a>
-    <ul>
-      <li><a href="index.html">Αρχική</a></li>
-      <li><a href="iptv">IPTV Server</a></li>
-      <li><a href="smartnotebook19.html">SMART Notebook 19</a></li>
-      <!-- Updated link for "Πληροφορίες" button -->
-      <li><a href="#" onclick="openModal()">Πληροφορίες</a></li>
-      <li><a href="https://archive.org/details/@basilesanast1">Συλλογή στο Internet Archive</a></li>
-      <li><a href="https://archive.org/details/tucows">Tucows Software Library</a></li>
-      <li><a href="kavafis">Ποιήματα του Καβάφη</a></li>
-    </ul>
-    <div class="email-button">
-      <a href="mailto:basilesanast3428@hotmail.com">
-        <img src="gif/email22.gif" alt="Email">
-      </a>
-    </div>
-  </div>
-  <div class="content">
-    <h1>IRIS Research Labs</h1>
-    <h2>Η Πειρατεία είναι τέχνη</h2>
-    <div class="message-box">
-      <p>Το ArcaOS 5.0 είναι διαθέσιμο την συλλογή μας στο Internet Archive</p>
-    </div>
-    <div class="center-container">
-      <!-- New HTML for the gif container -->
-      <img src="gif/ie.gif" alt="Internet Explorer">
-      <img src="gif/msn.gif" alt="MSN">
-      <img src="gif/debian_logo_02.gif" alt="Debian">
-      <img src="gif/mediaplayer7.gif" alt="Windows Media Player 7">
-      <img src="gif/86anim.gif" alt="Best viewed with 800x600 colors">
-      <img src="gif/winamp5.gif" alt="Winamp">
-      <img src="gif/office97.gif" alt="Office 97 is here!">
-      <img src="gif/98plusani.gif" alt="Microsoft PLUS! 98">
-      <img src="gif/notepad2.gif" alt="Notepad">
-      <img src="gif/netscape.gif" alt="NEtscape">
-      <img src="gif/microsoftreader.gif" alt="Microsoft Reader">
-      <img src="gif/gc_icon.gif" alt="Free Homepage">
-      <img src="gif/addchannel.gif" alt="Add this page to my Netscape">
-      <img src="gif/dell_88x31.gif" alt="DELL 4Me">
-      <img src="gif/hotmail3.gif" alt="Free E-Mail">
-      <img src="gif/members-choice.gif" alt="AOL Member's Choice">
-      <img src="gif/geocities_mirr.gif" alt="Geocities Logo">
-      <img src="gif/frontpag.gif" alt="Microsoft FrontPage">
-      <img src="gif/internet_now.gif" alt="Internet NOW">
-      <img src="gif/lpagebutton.gif" alt="Guestbook by lpage.com">
-      <img src="gif/msinternet.gif" alt="Microsoft Internet Tools">
-      <img src="gif/2cows.gif" alt="GO TUCOWS!">
-      <img src="gif/netmeeting.gif" alt="Microsoft NetMeeting">
-      <img src="gif/musicbutton.gif" alt="Music Button">
-      <img src="gif/w3c.gif" alt="W3C">
-      <img src="gif/linkexchange.gif" alt="LinkExchange">
-      <img src="gif/icqdownload.gif" alt="ICQ">
-      <img src="gif/rfc1876-now.gif" alt="RFC 1876 NOW!">
-      <img src="gif/winzip.gif" alt="WinZip">
-      <img src="gif/planet_dreamcast.gif" alt="Planet Dreamcast">
-      <img src="gif/netmechanic.gif" alt="NetMechanic">
-      <img src="gif/hotdog.gif" alt="HotDog NOW!">
-      <img src="gif/yoshisislandbutton.gif" alt="Yoshi's Island">
-      <img src="gif/Microsoft_readerlogo.gif" alt="Microsoft Reader">
-      <img src="gif/modem.gif" alt="HOL Dial-Up Modem">
-      <img src="gif/pwr_logo.gif" alt="Compaq Power Servers">
-    </div>
-  </div>
-  <div class="footer">
-    <p>2024 - Made by General basilesanast1 Γ'1</p>
-  </div>
 
-  <!-- Modal HTML -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h3>Πληροφορίες για τα E-Mail</h3>
-      <p>Στείλτε μας E-Mail για να αναφέρετε κάποιο πρόβλημα ή για να προτείνετε κάποια αλλαγή.</p>
-      <p>Τα junk E-Mails θα διαγράφονται και ο αποστολέας θα αποκλείεται.</p>
-    </div>
-  </div>
+    <header>
+        <img class="logo" src="logo.png" alt="Logo">
+        <h1 style="flex-grow: 1;">.json FTC Team @ Volos</h1>
+    </header>
 
-  <script>
-    // Get the modal
-    var modal = document.getElementById("modal");
+    <section>
+        <h2>.json FTC Team @ Volos</h2>
+        <p>In development</p>
+    </section>
 
-    // Function to open the modal
-    function openModal() {
-      modal.style.display = "block";
-    }
+    <footer>
+        <p>&copy; 2024 .json. All rights reserved.</p>
+    </footer>
 
-    // Function to close the modal
-    function closeModal() {
-      modal.style.display = "none";
-    }
-
-    // Close the modal when the user clicks anywhere outside of it
-    window.onclick = function (event) {
-      if (event.target == modal) {
-        closeModal();
-      }
-    };
-  </script>
 </body>
+
 </html>
+
