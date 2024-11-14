@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panorama 24/7 Radio Station</title>
+    <style>
+        /* Set a grey background color for the entire page */
+        body {
+            background-color: #f0f0f0; /* Light grey */
+            margin: 0;
+            padding: 0;
+        }
+        /* Styling for the player */
+        .player-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            font-family: Arial, sans-serif;
+        }
+        .centered-image {
+            width: 150px; /* Adjust size as needed */
+            margin-bottom: 20px;
+        }
+        .player-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .song-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="player-container">
+    <!-- Centered Open24 GIF -->
+    <img src="open24.gif" alt="Open 24/7" class="centered-image">
+    
+    <!-- Static Album Art -->
+    <img src="image.jpg" alt="Album Art" class="player-image">
+    
+    <!-- Song Title -->
+    <div class="song-title" id="songTitle">Loading song...</div>
+    
+    <!-- Audio Player Controls -->
+    <audio id="audioPlayer" controls>
+        Your browser does not support the audio element.
+    </audio>
+</div>
+<script>
+    // Array of song objects with title and file path
+    const songs = [
+        { title: "Aku Sayang x Sprinter (Bass+Slowed)", file: "1.mp3" },
+        { title: "Laszlo - Supernova", file: "2.mp3" },
+        { title: "Lynyrd Skynyrd - Sweet Home Alabama", file: "3.mp3" }
+    ];
+
+    // Get the HTML elements
+    const audioPlayer = document.getElementById("audioPlayer");
+    const songTitle = document.getElementById("songTitle");
+    let lastPlayedIndex = -1; // Track the last played song
+
+    // Function to play a random song that is not the same as the last one
+    function playRandomSong() {
+        let randomIndex;
+
+        // Ensure we pick a new song that's not the same as the last played one
+        do {
+            randomIndex = Math.floor(Math.random() * songs.length);
+        } while (randomIndex === lastPlayedIndex);
+
+        const selectedSong = songs[randomIndex];
+        lastPlayedIndex = randomIndex;
+
+        // Update song title and audio source
+        songTitle.textContent = selectedSong.title;
+        audioPlayer.src = selectedSong.file;
+        audioPlayer.play();
+    }
+
+    // Play a new random song when the current one ends
+    audioPlayer.addEventListener("ended", playRandomSong);
+
+    // Play a random song when the page loads
+    window.onload = playRandomSong;
+</script>
+</body>
+</html>
